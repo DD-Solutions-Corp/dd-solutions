@@ -1,0 +1,26 @@
+
+DD Solutions Website Structure
+
+Main HTML Pages and Their Roles:
+
+index.html - ホームページ (トップページ)
+  - DD Solutions株式会社のメインページ
+  - 会社概要、サービス紹介、お知らせなどの概要を表示
+
+contact.html - お問い合わせページ  
+  - お客様からの問い合わせフォームや連絡先情報を提供
+  - 会社の所在地、電話番号、メールアドレスなどの連絡先情報
+
+content1.html - 家電販売・修理ページ
+  - 家電製品の販売サービスと出張修理サービスの詳細
+  - 埼玉県熊谷市を中心とした地域密着型家電サービス
+
+content2.html - WEB・ソフトウェア開発ページ  
+  - ウェブサイト制作、ソフトウェア開発サービスの紹介
+  - ITソリューション、システム開発などの技術サービス
+
+content3.html - 新着情報ページ
+  - 会社の最新ニュース、お知らせ、イベント情報
+  - サービス更新情報やキャンペーン情報の掲載
+
+All files are located in: /workspace/dd-solutions/src_work/dd-sol.com/dd-sol.com/

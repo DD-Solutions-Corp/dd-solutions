@@ -1,0 +1,9 @@
+Repack fixed at: 2025-10-19T13:09:23.483611
+Original zip: dd-temp 2.zip
+Detected theme root: /mnt/data/_fix_theme_work/dd-temp
+Export folder: /mnt/data/dd-temp-custommenu-fixed/dd-solutions-theme-deliverable
+Patches:
+- functions.php: contains register_nav_menus header/footer
+- header.php: (True, 'patched')
+- footer.php: (True, 'patched')
+Note: style.css is present at theme root, fulfilling WP requirement.

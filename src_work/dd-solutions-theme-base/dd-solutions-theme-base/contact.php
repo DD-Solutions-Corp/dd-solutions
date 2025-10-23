@@ -1,0 +1,476 @@
+<?php /* Template Name: CONTACT */ ?>
+<?php get_header(); ?>
+<header id="headWrap">
+  <div id="headContent">
+    <div class="logoArea">
+      <p><a href="<?php echo esc_url( home_url("/") ); ?>"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/logo.png" alt="DD Solutions株式会社"></a></p>
+    </div>
+    <div class="pcNaviWrap">
+      <div class="inner">
+        <nav class="NavMenu pcNavi">
+<?php
+wp_nav_menu(array(
+    'theme_location'  => 'header',
+    'container'       => false,
+    'fallback_cb'     => '__return_empty_string',
+    'depth'           => 2,
+    'items_wrap'      => '<ul>%3$s</ul>'
+));
+?>
+</nav>
+        <div class="Toggle"> <span class="toggle-span"></span> <span></span> <span></span>
+          <p>MENU</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="contactAreaTab">
+    <!-- <p class="telArea"><a href="<?php echo esc_url( home_url("/tel:048-798-7192/") ); ?>"><i class="fas fa-phone-square-alt"></i></a></p> -->
+    <p class="bnrContact"><a href="<?php echo esc_url( home_url("/contact/") ); ?>"><i class="fas fa-envelope-square"></i></a></p>
+  </div>
+</header>
+<div id="pageTitleMover">
+  <div id="pageTitle" class="contactTit">
+    <div id="pth1Wrap" class="bgWhite flex fadeInUp animated">
+      <h1>お問い合わせ</h1>
+    </div>
+  </div>
+</div>
+</div>
+<main>
+  <article>
+    <!--　電話のみのお問い合わせ　-->
+ <!--
+ <div class="bgWhite">
+    <div class="wrapper">
+      <div class="contPad90p">
+        <p class="catch2 txtCenter">お問い合わせは、<br class="pcOFFspON">
+          お電話で承っております。<br>
+          お気軽にお問い合わせください。 </p>
+        <p class="contactTel"><a href="<?php echo esc_url( home_url("/tel:090-1234-5678/") ); ?>"><i class="fas fa-phone-alt"></i>&nbsp;090-1234-5678</a></p>
+      </div>
+    </div>
+  </div>
+  　-->
+    <section class="bgWhite flex fadeInUp animated">
+      <div class="wrapper">
+        <h2 class="h2Center">メールフォーム<span>Mail form</span></h2>
+        <div class="contPad contact"> 
+          <!--<p class="fcRedOrange mgb1em">※このメールフォームは現在使用できません。お手数をお掛けいたしますが、お問い合わせはお電話にて承ります。</p>-->
+          <p>以下の項目にご記入の上、最下部の&nbsp;[&nbsp;確認&nbsp;]&nbsp;ボタンを押してください。</p>
+          <p class="txtInd">※半角カタカナは利用しないようお願い致します。</p>
+          <p class="txtInd2"><span class="fcRedOrange">*</span>印は入力必須項目です。</p>
+          <form method="post" action="<?php echo esc_url( home_url('/') ); ?>/cgi-bin/postmail/postmail.cgi">
+            <table>
+              <!-- 企業用       --> 
+              <tr>
+              <th scope="row">お問い合わせ種別<span class="fcRedOrange">*</span></th>
+              <td><input type="hidden" value="お問い合わせ種別" name="need">
+                <input type="checkbox" name="お問い合わせ種別" value="家電販売・修理" class="checkBox">
+                家電販売・修理&nbsp;&nbsp;
+                <input type="checkbox" name="お問い合わせ種別" value="WEB・ソフトウェア開発" class="checkBox">
+                WEB・ソフトウェア開発&nbsp;<br class="pcOFFspON">
+                <!-- <input type="checkbox" name="お問い合わせ種別" value="求人" class="checkBox">
+                求人&nbsp;&nbsp;
+                <input type="checkbox" name="お問い合わせ種別" value="資料請求" class="checkBox">
+                資料請求&nbsp; -->
+                <!-- <input type="checkbox" name="お問い合わせ種別" value="その他" class="checkBox">
+                その他</td> -->
+            </tr>
+              
+              <!-- 個人事業主(予約)用 
+              <tr>
+                <th scope="row">お問い合わせ種別<span class="fcRedOrange">*</span></th>
+                <td><input type="hidden" value="お問い合わせ種別" name="need">
+                  <input type="checkbox" name="お問い合わせ種別" value="お問い合わせ" class="checkBox">
+                  お問い合わせ&nbsp;&nbsp;
+                  <input type="checkbox" name="お問い合わせ種別" value="ご予約" class="checkBox">
+                  ご予約&nbsp;<br class="pcOFFspON">
+                  <input type="checkbox" name="お問い合わせ種別" value="求人" class="checkBox">
+                  求人&nbsp;&nbsp;
+                  <input type="checkbox" name="お問い合わせ種別" value="その他" class="checkBox">
+                  その他</td>
+              </tr>
+			--> 
+              <!-- 個人事業主(見積もり)用 
+              <tr>
+                <th scope="row">お問い合わせ種別<span class="fcRedOrange">*</span></th>
+                <td><input type="hidden" value="お問い合わせ種別" name="need">
+                  <input type="checkbox" name="お問い合わせ種別" value="お問い合わせ" class="checkBox">
+                  お問い合わせ&nbsp;&nbsp;
+                  <input type="checkbox" name="お問い合わせ種別" value="お見積もり" class="checkBox">
+                  お見積もり&nbsp;<br class="pcOFFspON">
+                  <!--<input type="checkbox" name="お問い合わせ種別" value="求人" class="checkBox">
+                  求人&nbsp;&nbsp;
+                  <input type="checkbox" name="お問い合わせ種別" value="その他" class="checkBox">
+                  その他</td>
+              </tr>--> 
+              
+              
+              <!-- 通販用
+              <tr>
+                <th scope="row">お問い合わせ種別<span class="fcRedOrange">*</span></th>
+                <td><input type="hidden" value="お問い合わせ種別" name="need">
+                  <input type="checkbox" name="お問い合わせ種別" value="お問い合わせ" class="checkBox">
+                  お問い合わせ&nbsp;&nbsp;
+                  <input type="checkbox" name="お問い合わせ種別" value="ご注文" class="checkBox">
+                  ご注文&nbsp;<br class="pcOFFspON">
+                  <input type="checkbox" name="お問い合わせ種別" value="その他" class="checkBox">
+                  その他</td>
+			  </tr>
+			-->
+              <tr>
+                <th scope="row">会社名</th>
+                <td><input name="会社名" type="text" class="formm"></td>
+              </tr>
+              <tr>
+                <th scope="row">氏名<span class="fcRedOrange">*</span></th>
+                <td><input name="_氏名" type="text" class="formm"></td>
+              </tr>
+              <tr>
+                <th scope="row">氏名（フリガナ）<span class="fcRedOrange">*</span></th>
+                <td><input name="_氏名（フリガナ）" type="text" class="formm"></td>
+              </tr>
+              <tr>
+                <th scope="row">メールアドレス<span class="fcRedOrange">*</span></th>
+                <td><input name="_email" type="text" class="formm"></td>
+              </tr>
+              <tr>
+                <th scope="row">確認用メールアドレス<span class="fcRedOrange">*</span></th>
+                <td><p class="txtInd">
+                    <input type="text"class="formm" name="_email2">
+                    <br>
+                    <input type="hidden" value="email email2" name="match">
+                  </p></td>
+              </tr>
+              <tr>
+                <th scope="row">電話番号<span class="fcRedOrange">*</span></th>
+                <td><input type="text" name="_電話番号"></td>
+              </tr>
+              <tr>
+                <th scope="row">FAX番号</th>
+                <td><input type="text" name="FAX番号"></td>
+              </tr>
+              <tr>
+                <th scope="row">住所</th>
+                <td> 〒
+                  <input name="郵便番号" type="text">
+                  <br>
+                  <select name="都道府県">
+                    <option value="" selected="selected">都道府県</option>
+                    <option value="北海道">北海道</option>
+                    <option value="青森県">青森県</option>
+                    <option value="岩手県">岩手県</option>
+                    <option value="宮城県">宮城県</option>
+                    <option value="秋田県">秋田県</option>
+                    <option value="山形県">山形県</option>
+                    <option value="福島県">福島県</option>
+                    <option value="茨城県">茨城県</option>
+                    <option value="栃木県">栃木県</option>
+                    <option value="群馬県">群馬県</option>
+                    <option value="埼玉県">埼玉県</option>
+                    <option value="千葉県">千葉県</option>
+                    <option value="東京都">東京都</option>
+                    <option value="神奈川県">神奈川県</option>
+                    <option value="新潟県">新潟県</option>
+                    <option value="富山県">富山県</option>
+                    <option value="石川県">石川県</option>
+                    <option value="福井県">福井県</option>
+                    <option value="山梨県">山梨県</option>
+                    <option value="長野県">長野県</option>
+                    <option value="岐阜県">岐阜県</option>
+                    <option value="静岡県">静岡県</option>
+                    <option value="愛知県">愛知県</option>
+                    <option value="三重県">三重県</option>
+                    <option value="滋賀県">滋賀県</option>
+                    <option value="京都府">京都府</option>
+                    <option value="大阪府">大阪府</option>
+                    <option value="兵庫県">兵庫県</option>
+                    <option value="奈良県">奈良県</option>
+                    <option value="和歌山県">和歌山県</option>
+                    <option value="鳥取県">鳥取県</option>
+                    <option value="島根県">島根県</option>
+                    <option value="岡山県">岡山県</option>
+                    <option value="広島県">広島県</option>
+                    <option value="山口県">山口県</option>
+                    <option value="徳島県">徳島県</option>
+                    <option value="香川県">香川県</option>
+                    <option value="愛媛県">愛媛県</option>
+                    <option value="高知県">高知県</option>
+                    <option value="福岡県">福岡県</option>
+                    <option value="佐賀県">佐賀県</option>
+                    <option value="長崎県">長崎県</option>
+                    <option value="熊本県">熊本県</option>
+                    <option value="大分県">大分県</option>
+                    <option value="宮崎県">宮崎県</option>
+                    <option value="鹿児島県">鹿児島県</option>
+                    <option value="沖縄県">沖縄県</option>
+                    <option value="その他">その他</option>
+                  </select>
+                  <br>
+                  <input name="市区町村以下住所" type="text" class="forml"></td>
+              </tr>
+              <!-- 個人事業主(予約)用 --> 
+              <!--
+              <tr>
+                <th scope="row">希望日時
+                  (第1希望、第2希望)</th>
+                <td>第1希望&nbsp;
+                  <select name="第1希望_月">
+                    <option value="" selected>選択</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                  </select>
+                  月
+                  <select name="第1希望_日">
+                    <option value="" selected>選択</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                    <option>13</option>
+                    <option>14</option>
+                    <option>15</option>
+                    <option>16</option>
+                    <option>17</option>
+                    <option>18</option>
+                    <option>19</option>
+                    <option>20</option>
+                    <option>21</option>
+                    <option>22</option>
+                    <option>23</option>
+                    <option>24</option>
+                    <option>25</option>
+                    <option>26</option>
+                    <option>27</option>
+                    <option>28</option>
+                    <option>29</option>
+                    <option>30</option>
+                    <option>31</option>
+                  </select>
+                  日 <br>
+                  第2希望&nbsp;
+                  <select name="第2希望_月">
+                    <option value="" selected>選択</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                  </select>
+                  月
+                  <select name="第2希望_日">
+                    <option value="" selected>選択</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                    <option>13</option>
+                    <option>14</option>
+                    <option>15</option>
+                    <option>16</option>
+                    <option>17</option>
+                    <option>18</option>
+                    <option>19</option>
+                    <option>20</option>
+                    <option>21</option>
+                    <option>22</option>
+                    <option>23</option>
+                    <option>24</option>
+                    <option>25</option>
+                    <option>26</option>
+                    <option>27</option>
+                    <option>28</option>
+                    <option>29</option>
+                    <option>30</option>
+                    <option>31</option>
+                  </select>
+                  日</td>
+              </tr>
+              -->
+              <!-- <tr>
+                <th scope="row">ご返信方法</th>
+                <td><input type="radio" name="ご返信方法" value="電話" class="checkBox">
+                  電話&nbsp;&nbsp;
+                  <input type="radio" name="ご返信方法" value="メール" class="checkBox">
+                  メール&nbsp;&nbsp;<br class="pcOFFspON">
+                  <input type="radio" name="ご返信方法" value="どちらでも構わない" class="checkBox">
+                  どちらでも構わない </td>
+              </tr> -->
+              <tr>
+                <th scope="row">お問い合わせ内容</th>
+                <td><textarea name="お問い合わせ内容" rows="8" class="forml"></textarea></td>
+              </tr>
+            </table>
+            <div class="formBtn">
+              <input type="submit" value="確認" class="btnSend">
+              <input type="reset" value="クリア" class="btnReset">
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+    <section class="bgColor privacy flex fadeInUp animated">
+      <div class="wrapper">
+        <h2>プライバシーポリシー<br class="pcOFFtabletON">
+          （個人情報保護方針）<span>Privacy policy</span></h2>
+        <div class="contPad">
+          <p>当社は、すべての業務運営にあたり、お客様からの信頼を第一と考え、個人情報の保護に関する法律（「個人情報保護法」）にしたがって、お客様の個人情報を厳格に管理し、お客様の希望に沿って取扱うとともに、お客様の個人情報の正確性・機密性の保持に努めています。<br>
+          </p>
+          <h3>個人情報の管理</h3>
+          <p>当社は、お客様の個人情報を正確かつ最新の状態に保ち、個人情報への不正アクセス・紛失・破損・改ざん・漏洩などを防止するため、セキュリティシステムの維持・管理体制の整備・社員教育の徹底等の必要な措置を講じ、安全対策を実施し個人情報の厳重な管理を行ないます。</p>
+          <h3>個人情報の取得および利用</h3>
+          <p>当社は、個人情報を取得する場合には利用目的を明示し、その目的達成に足る必要範囲内で適正に取得させていただきます。また個人情報を利用するにあたっては、利用目的の範囲内の利用のみとし、その目的の範囲を超えた利用はいたしません。</p>
+          <h3>個人情報の利用目的</h3>
+          <p>お客様からお預かりした個人情報は、当社からのご連絡や業務のご案内やご質問に対する回答として、電子メールや資料のご送付に利用いたします。</p>
+          <h3>個人情報の第三者への開示・提供の禁止</h3>
+          <p>当社は、お客様よりお預かりした個人情報を適切に管理し、次のいずれかに該当する場合を除き、個人情報を第三者に開示いたしません。</p>
+          <ul class="liReseter">
+            <li>お客様の同意がある場合</li>
+            <li>お客様が希望されるサービスを行なうために当社が業務を委託する業者に対して開示する場合</li>
+            <li>裁判所・警察などの公的機関から開示・提供の要請があった場合 </li>
+          </ul>
+          <h3>個人情報の開示、内容の訂正、追加または削除、利用の停止、消去</h3>
+          <p>当社がお預かりするお客様の個人情報に関して、お客様が個人情報の確認、訂正等を希望される場合には、速やかに対応させていただきます。尚、各種手続きに際してはご本人である事を確認させていただく場合がございます。</p>
+          <!-- <h3>社内体制と継続的見直し</h3>
+          <p>当社は、個人情報の取り扱いに関して社内規定に明記し、規約を具体化するために、業務遂行の上で必要となるルールを策定するとともに部門毎に管理者を置く等、個人情報保護を遵守する体制を構築いたします。また、この体制が、有効かつ適正にしかも持続的に機能するよう、継続的な見直しと改善を計ってまいります。</p>
+          <h3>社内教育</h3>
+          <p>当社は、社員に対して個人情報保護についての教育訓練を行い、全社員が個人情報を適正に運用出来る知識と意識を高めていきます。</p> -->
+          <h3>法令等の遵守</h3>
+          <p>当社は、個人情報保護法その他関係法令、及びガイドライン等を遵守いたします。</p>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="bgTopad1 flex fadeInUp animated">
+      <div class="wrapper">
+        <h2>会社案内</h2>
+        <div class="f-wrap-AC ">
+          <div class="f-item1-2 flex ">
+            <table class="table3Dot">
+              <tr>
+                <th>会社名</th>
+                <td>DD Solutions株式会社</td>
+              </tr>
+              <tr>
+                <th>代表</th>
+                <td>杉本 忍</td>
+              </tr>
+              <tr>
+                <th>所在地</th>
+                <td>〒150-0002 東京都渋谷区渋谷2丁目19番15号</td>
+              </tr>
+              <tr>
+                <th>事業内容</th>
+                <td>家電販売・修理<br>WEB・ソフトウェア開発<br><a href="https://msdigit.net/marrige/" target="_blank">結婚相談所</a></td>
+              </tr>
+            </table>
+          </div>
+          <div class="f-item1-2 flex ">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.7065667268516!2d139.70118707471482!3d35.65960053116367!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188b585f2fb139%3A0xea165c22084c241b!2z44CSMTUwLTAwMDIg5p2x5Lqs6YO95riL6LC35Yy65riL6LC377yS5LiB55uu77yR77yZ4oiS77yR77yV!5e0!3m2!1sja!2sjp!4v1745470786178!5m2!1sja!2sjp" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bgTopad2 flex fadeInUp animated">
+      <div class="wrapper">
+        <h2>DD Solutionsで働きませんか？</h2>
+        <div class="contPad70p txtPCcenterTabletLeft">
+          <p class="mgb2em">私たちは、お客様の笑顔を大切にする仲間を求めています。<br>一緒に成長し、喜びを共有できる方をお待ちしています！</p>
+          <div class="txtCenter">
+            <p class="txtBnrAr"><a href="<?php echo esc_url( home_url('/') ); ?>/wp/category/career/">採用情報はこちら</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </article>
+</main>
+
+<footer>
+  <p id="pagetop"><a href="<?php echo esc_url( home_url("/contact/") ); ?>"><i class="fas fa-chevron-circle-up fa-3x"></i></a></p>
+  <div class="footerNaviWrap flex fadeInUp animated">
+    <div class="footNavi">
+      <?php
+wp_nav_menu(array(
+    'theme_location'  => 'footer',
+    'container'       => false,
+    'fallback_cb'     => '__return_empty_string',
+    'depth'           => 1,
+    'items_wrap'      => '<?php
+wp_nav_menu(array(
+    'theme_location'  => 'footer',
+    'container'       => false,
+    'fallback_cb'     => '__return_empty_string',
+    'depth'           => 1,
+    'items_wrap'      => '<ul class="mb0">%3$s</ul>'
+));
+?>'
+));
+?>
+    </div>
+  </div>
+  <div id="footerDataWrap">
+    <div class="footDataArea flex fadeInUp animated">
+      <p class="companyName"><img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/foot_logo.png" alt="DD Solutions株式会社"></p>
+      <div class="footAdress">
+        <p>〒150-0002 <span class="pcONspOFF">&nbsp;</span><br class="pcOFFspON">
+          東京都渋谷区渋谷2丁目19番15号</p>
+      </div>
+    </div>
+  </div>
+  <div class="copyright">
+    <p>&copy; 
+      <script type="text/javascript">
+myDate = new Date() ;myYear = myDate.getFullYear ();document.write(myYear);
+    </script>&nbsp;DD Solutions株式会社. All Rights Reserved. </p>
+  </div>
+  <!--　右フローティングバナー
+  <ul class="fixRightBnr">
+    <li class="insta"><a href="https://instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+    <li class="twitter"><a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></li>
+    <li class="facebook"><a href="https://facebook.com/" target="_blank"><i class="fa-brands fa-facebook"></i></a></li>
+    <li class="youtube"><a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
+    <li class="line"><a href="https://line.me/" target="_blank"><i class="fa-brands fa-line"></i></a></li>
+    <li class="tictok"><a href="https://www.tiktok.com/" target="_blank"><i class="fa-brands fa-tiktok"></i></a></li>
+    <li class="ameba"><a href="#" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i><span>Ameba</span></a></li>
+    <li><a href="#"><i class="fa-solid fa-circle-chevron-right"></i> <span>サイト内</span></a></li>
+    <li><a href="<?php echo esc_url( home_url("/tel:03-0000-0000/") ); ?>"><i class="fa-solid fa-phone-flip"></i></a></li>
+  </ul>
+  <!--　/ 右フローティングバナー --> 
+</footer>
+<?php get_footer(); ?>

@@ -1,0 +1,9 @@
+/* ヒーロースライダーの背景スタイル */
+[data-hero-images] {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-image 1s ease-in-out;
+  min-height: 300px;
+}

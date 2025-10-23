@@ -1,0 +1,19 @@
+/*
+Theme Name: DD Solutions Theme
+Description: 旧サイトのデザイン・下層ページを忠実に再現した WordPress テーマです。レスポンシブ対応と画像最適化、ヒーロースライダー用のフックを含みます。
+Version: 4.3.5
+Author: DD Solutions
+*/
+
+/* --- Minimal base reset (keep truly essential only) --- */
+html{box-sizing:border-box}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;line-height:1.5;-webkit-font-smoothing:antialiased;}
+
+/* --- PageTop global button --- */
+#pagetop{position:fixed;right:16px;bottom:16px;display:none;z-index:1000}
+#pagetop.is-visible{display:block}
+
+
+/* KILL SWITCH for legacy page_top */
+#page_top, .page_top_btn{display:none !important; visibility:hidden !important;}

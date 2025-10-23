@@ -1,0 +1,146 @@
+
+/* PageTop final visibility */
+#pagetop{display:none!important}
+#pagetop.is-visible{display:flex!important}
+
+
+/* merged from 90-footer.css */
+/* footer styles imported from old theme */
+Footer minimal */
+.site-header{background-color:transparent!important;top:0;border-bottom:1px solid #eaeaea;z-index:50}
+footer{margin-top:40px;background:linear-gradient(180deg,#1e3a5f,#16406e);color:#e8f0f6}
+footer .container{padding:24px 16px}
+footer-logo{font-weight:800;letter-spacing:.3px;margin-bottom:6px}
+footer-address{font-size:14px;color:#cfe3f0}
+footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	font-size:100%;
+	vertical-align:baseline;
+	background:transparent;
+	list-style-type: none;
+}
+footer, header, hgroup, menu, nav, section {
+	display:block;
+}
+footer
+===========================*/
+
+
+footer {
+	/* 背景黒 
+	background:url(../../img/footer_dark.jpg);
+	*/
+	/* 背景白 */
+	background:url(../../img/footer.jpg);
+	background-size:cover;
+	background-position:center;
+	
+	/* background-color:#222; */
+	/* 背景黒 
+	color:#fff;
+	*/
+	/* 背景白 */
+	color:#000;
+}
+footerNaviWrap a,
+.footerNaviWrap {
+    text-decoration: none;	
+}
+footerNaviWrap {
+	/* 背景黒 
+	background: rgba(0,0,0,.4);
+	*/
+	/* 背景白 */
+	background: rgba(255,255,255,.4);
+	
+}
+footer {
+}
+#footerDataWrap {
+	padding:0 10px 0 10px;
+}
+#footerDataWrap {
+	padding:2em 10px 0 10px;
+}
+footer in content area (keeps theme header/footer) --- */
+.wp-main .legacy-wrap header,
+.wp-main .legacy-wrap footer,
+.wp-main > header,
+.wp-main > footer { display: none !important; }
+footer/menu & body headings (v4.3.2) ===== */
+
+/* Header layout: logo left, nav centered, CTA right; consistent font sizes */
+.site-header{box-shadow:0 1px 0 #eaeaea;position:sticky;top:0;z-index:1000}
+footer-nav .menu{display:flex !important;flex-wrap:wrap;gap:18px}
+Footer: two-tier block with gradient background and footer menu visible */
+.site-footer{background:linear-gradient(180deg,#1e3a5f,#16406e) !important;color:#e8f0f6;margin-top:48px}
+footer .container{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;padding:26px 16px}
+footer-logo{font-weight:800;letter-spacing:.3px;font-size:18px}
+footer-address{font-size:14px;color:#cfe3f0}
+footer-nav .menu a{color:#e8f0f6 !important;font-size:14px;padding:6px 0}
+footer in content if any remain */
+.wp-main .legacy-wrap header,
+.wp-main .legacy-wrap footer,
+.wp-main > header,
+.wp-main > footer { display:none !important; }
+footer .container{grid-template-columns:1fr}
+Footer: two-tier gradient, logo & address left, menu right; ensure menu visible */
+.site-footer{background:linear-gradient(180deg,#1e3a5f,#16406e)!important; color:#e8f0f6}
+footer .container{display:grid; grid-template-columns:1fr auto; gap:28px; align-items:center; padding:28px 16px}
+footer-logo{font-weight:800; font-size:18px; letter-spacing:.3px}
+footer-address{font-size:14px; color:#cfe3f0}
+footer-nav .menu{display:flex!important; gap:18px; list-style:none; margin:0; padding:0}
+footer-nav .menu a{color:#e8f0f6!important; font-size:14px; padding:6px 0}
+footer .container{grid-template-columns:1fr}
+footer-nav .menu{flex-wrap:wrap}
+Footer: two-tier — top (menu bar) + bottom (logo/address) */
+.site-footer{margin-top:48px}
+footer .footer-top{
+  background:rgba(72,133,167,0.25);
+  backdrop-filter:saturate(120%);
+}
+footer .footer-top .container{
+  padding:14px 16px;
+  display:flex; justify-content:center;
+}
+footer .footer-top .menu{
+  display:flex!important; gap:24px; list-style:none; margin:0; padding:0;
+}
+footer .footer-top .menu a{color:#0d2235; font-size:14px; padding:6px 0}
+footer .footer-bottom{
+  background:linear-gradient(180deg,#1e3a5f,#16406e); color:#e8f0f6;
+}
+footer .footer-bottom .container{
+  padding:28px 16px; text-align:center;
+}
+footer-logo{font-weight:800; font-size:18px; letter-spacing:.3px}
+footer-address{font-size:14px; color:#cfe3f0}
+footer in content stays hidden */
+.wp-main .legacy-wrap header,
+.wp-main .legacy-wrap footer,
+.wp-main > header,
+.wp-main > footer{display:none!important}
+footer .footer-top .menu{flex-wrap:wrap; gap:14px}
+footer structure ===== */
+#headWrap .header-bar { display:grid; grid-template-columns:auto 1fr auto auto; gap:20px; align-items:center; padding:12px 0; }
+Footer visual to match legacy */
+.footerNaviWrap { background: rgba(72,133,167,0.25); padding:14px 0; text-align:center; }
+footerNaviWrap .mb0 { display:inline-flex; gap:20px; padding:0; margin:0; list-style:none; }
+#footerDataWrap { background: linear-gradient(180deg,#1e3a5f,#16406e); color:#e8f0f6; }
+#footerDataWrap .footDataArea { justify-content:center; gap:24px; padding:24px 16px; }
+footer CSS (won't touch body layout)
+ * 2025-10-18
+ */
+.site-header { border-bottom: 1px solid #e5e5e5; background:#fff; }
+footer{ border-top:1px solid #e5e5e5; background:#fafafa; margin-top:48px; }
+footer-inner{ width:min(1200px,94%); margin:0 auto; text-align:center; padding:24px 0 36px; }
+footer-logo img{ height:48px; width:auto; display:inline-block; margin-bottom:8px; }
+footer-nav .menu{ justify-content:center; gap:16px; }
+footer-copy{ display:block; margin-top:12px; color:#666; font-size:.9rem; }
+
+/* PageTop final visibility */
+#pagetop{display:none!important}
+#pagetop.is-visible{display:flex!important}

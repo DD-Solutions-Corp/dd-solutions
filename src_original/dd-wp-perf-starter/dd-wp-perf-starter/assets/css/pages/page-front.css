@@ -1,0 +1,4 @@
+/* トップページ専用の微調整（例） */
+.hero { margin-top: 0; }
+.hero .js-hero-rotator { height: 70vh; }
+@media (max-width:768px){ .hero .js-hero-rotator{ height: 52vh; } }
