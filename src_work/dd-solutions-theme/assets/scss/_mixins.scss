@@ -1,0 +1,83 @@
+
+
+
+// レスポンシブブレイクポイント
+@mixin media-breakpoint-up($breakpoint) {
+  @if $breakpoint == xs {
+    @media (min-width: $breakpoint-xs) { @content; }
+  } @else if $breakpoint == sm {
+    @media (min-width: $breakpoint-sm) { @content; }
+  } @else if $breakpoint == md {
+    @media (min-width: $breakpoint-md) { @content; }
+  } @else if $breakpoint == lg {
+    @media (min-width: $breakpoint-lg) { @content; }
+  } @else if $breakpoint == xl {
+    @media (min-width: $breakpoint-xl) { @content; }
+  }
+}
+
+@mixin media-breakpoint-down($breakpoint) {
+  @if $breakpoint == xs {
+    @media (max-width: ($breakpoint-sm - 1)) { @content; }
+  } @else if $breakpoint == sm {
+    @media (max-width: ($breakpoint-md - 1)) { @content; }
+  } @else if $breakpoint == md {
+    @media (max-width: ($breakpoint-lg - 1)) { @content; }
+  } @else if $breakpoint == lg {
+    @media (max-width: ($breakpoint-xl - 1)) { @content; }
+  } @else if $breakpoint == xl {
+    @media (max-width: $breakpoint-xl) { @content; }
+  }
+}
+
+// フレックスボックスユーティリティ
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// ボタンスタイル
+@mixin button-style($bg-color, $text-color, $hover-bg-color) {
+  background-color: $bg-color;
+  color: $text-color;
+  border: none;
+  padding: $spacing-sm $spacing-md;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: $transition-base;
+  
+  &:hover {
+    background-color: $hover-bg-color;
+  }
+}
+
+// グラデーション背景
+@mixin gradient-bg($color1, $color2) {
+  background: linear-gradient(135deg, $color1, $color2);
+}
+
+// テキスト装飾
+@mixin text-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// アニメーション
+@mixin fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+

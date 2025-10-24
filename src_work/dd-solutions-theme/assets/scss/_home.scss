@@ -1,0 +1,130 @@
+
+
+
+
+@import 'variables';
+@import 'mixins';
+
+// ホームページ固有のスタイル
+.bnrPic3Box {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: $shadow-base;
+  transition: $transition-base;
+  flex: 1 1 30%;
+  min-height: 200px;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: $shadow-hover;
+  }
+  
+  .bnrPicInner {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    padding: $spacing-xl;
+    
+    .gridCenter {
+      text-align: center;
+      color: $background-color;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+      
+      a {
+        color: $background-color;
+        text-decoration: none;
+        font-size: $font-size-large;
+        font-weight: bold;
+        display: block;
+      }
+    }
+  }
+  
+  &.bnrGrid01 {
+    background: linear-gradient(135deg, #007cba, #005a87);
+  }
+  
+  &.bnrGrid02 {
+    background: linear-gradient(135deg, #ff6b35, #e74c3c);
+  }
+  
+  &.bnrGrid03 {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+  }
+  
+  @include media-breakpoint-down(md) {
+    flex: 1 1 100%;
+    min-height: 150px;
+  }
+}
+
+// 代表挨拶セクション
+.representative-greeting {
+  .txtSign {
+    margin-top: $spacing-lg;
+    font-weight: bold;
+  }
+}
+
+// 採用情報セクション
+.career-section {
+  .txtBnrAr {
+    a {
+      @include button-style($primary-color, $background-color, darken($primary-color, 10%));
+      text-decoration: none;
+      display: inline-block;
+      padding: $spacing-sm $spacing-md;
+    }
+  }
+}
+
+// フロー表示
+.flowWrap {
+  .st-box {
+    text-align: center;
+    padding: $spacing-lg;
+    background-color: $primary-color;
+    color: $background-color;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    
+    .title {
+      font-size: $font-size-small;
+      margin: 0;
+    }
+    
+    .num {
+      font-size: $font-size-h2;
+      margin: 0;
+      font-weight: bold;
+    }
+  }
+  
+  .catch2 {
+    font-size: $font-size-h3;
+    margin-bottom: $spacing-sm;
+    color: $primary-color;
+  }
+}
+
+// 会社案内セクション
+.company-info {
+  .table3Dot {
+    margin-bottom: $spacing-lg;
+  }
+  
+  iframe {
+    border-radius: 8px;
+    box-shadow: $shadow-base;
+  }
+}
+
+
+
+

@@ -1,0 +1,19 @@
+
+
+2025-10-23 12:00:00 - フェーズ3開始: 静的サイトの構造解析
+2025-10-23 12:15:00 - HTMLファイル構造分析完了: index.html, contact.html, content1.html, content2.html, content3.html を確認
+2025-10-23 12:30:00 - assetsディレクトリ作成: /workspace/dd-solutions/src_work/dd-solutions-theme/assets/{css,js,img}
+2025-10-23 12:45:00 - 静的ファイルコピー完了: CSS/JS/画像ファイルをassetsディレクトリに整理
+2025-10-23 13:00:00 - assets.php更新: 全CSS/JSファイルのwp_enqueue_style/wp_enqueue_scriptを追加
+2025-10-23 13:30:00 - front-page.php更新: ヒーローセクション、サービス紹介、新着情報のHTMLを統合
+2025-10-23 14:00:00 - announcementsカスタム投稿タイプ対応: 新着情報セクションをWP_Queryで動的に表示
+2025-10-23 14:30:00 - 固定ページテンプレート作成完了: 
+  - page-contact.php (お問い合わせページ)
+  - page-products.php (家電販売・修理ページ)  
+  - page-services.php (WEB・ソフトウェア開発ページ)
+  - page-news.php (新着情報ページ)
+2025-10-23 15:00:00 - SELECTOR-MAP.json作成: 旧CSSセレクタと新テーマセレクタの対応表を作成
+2025-10-23 15:30:00 - 画像最適化実装: 全<img>タグにwidth/height属性、loading="lazy"、decoding="async"を追加
+2025-10-23 15:45:00 - LCP画像最適化: ヒーロー画像にfetchpriority="high"を付与
+2025-10-23 16:00:00 - フェーズ3完了: theme_migrated.zipを作成し、phase3_done.flagを設定
+
