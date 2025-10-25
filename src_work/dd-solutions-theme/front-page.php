@@ -1,6 +1,69 @@
 <?php get_header(); ?>
 <div id="mainVisualWrap" class="flex fadeInUp animated">
-  <div id="mainVisual"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/top/mainimage.jpg" alt="" class="pcONspOFF"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/top/mainimage_sp.jpg" alt="" class="pcOFFspON">
+  <div id="mainVisual">
+    <?php
+    // ヒーロースライダー画像を取得
+    $slides = [];
+    for ($i = 1; $i <= 3; $i++) {
+        $pc = get_theme_mod("hero_slide_{$i}_pc");
+        $sp = get_theme_mod("hero_slide_{$i}_sp");
+        if ($pc || $sp) {
+            $pc_url = $pc ? wp_get_attachment_url($pc) : get_template_directory_uri() . '/assets/img/top/mainimage.jpg';
+            $sp_url = $sp ? wp_get_attachment_url($sp) : get_template_directory_uri() . '/assets/img/top/mainimage_sp.jpg';
+            $slides[] = ['pc' => $pc_url, 'sp' => $sp_url];
+        }
+    }
+    
+    // スライドがない場合はデフォルト画像
+    if (empty($slides)) {
+        $slides[] = [
+            'pc' => get_template_directory_uri() . '/assets/img/top/mainimage.jpg',
+            'sp' => get_template_directory_uri() . '/assets/img/top/mainimage_sp.jpg'
+        ];
+    }
+    ?>
+    
+    <?php if (count($slides) > 1): ?>
+    <!-- スライダー表示 -->
+    <div class="hero-slider">
+      <?php foreach ($slides as $idx => $slide): ?>
+      <div class="slide-item <?php echo $idx === 0 ? 'active' : ''; ?>">
+        <img src="<?php echo esc_url($slide['pc']); ?>" alt="ヒーロー画像<?php echo $idx + 1; ?>" class="pcONspOFF">
+        <img src="<?php echo esc_url($slide['sp']); ?>" alt="ヒーロー画像<?php echo $idx + 1; ?>" class="pcOFFspON">
+      </div>
+      <?php endforeach; ?>
+    </div>
+    <script>
+    jQuery(document).ready(function($) {
+        var currentSlide = 0;
+        var slides = $('.slide-item');
+        var totalSlides = slides.length;
+        
+        function showSlide(n) {
+            slides.fadeOut(1000);
+            slides.eq(n).fadeIn(1000);
+        }
+        
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+        
+        setInterval(nextSlide, 5000);
+    });
+    </script>
+    <style>
+    .hero-slider { position: relative; }
+    .slide-item { position: absolute; top: 0; left: 0; width: 100%; display: none; }
+    .slide-item:first-child { position: relative; display: block; }
+    .slide-item img { width: 100%; height: auto; display: block; }
+    </style>
+    <?php else: ?>
+    <!-- 単一画像表示 -->
+    <img src="<?php echo esc_url($slides[0]['pc']); ?>" alt="ヒーロー画像" class="pcONspOFF">
+    <img src="<?php echo esc_url($slides[0]['sp']); ?>" alt="ヒーロー画像" class="pcOFFspON">
+    <?php endif; ?>
+    
     <div class="mainCatch">
       <div class="flex fadeInUp animated mb20" data-wow-delay="0.5s">
         <p>家電IT周り<span class="fs80p">の</span>ホームドクター<br>
@@ -16,10 +79,11 @@
     </div>
     <div class="contNews flex fadeInUp animated">
       <?php
-      $type  = get_theme_mod('news_post_type', 'post');
+      $types = dd_get_selected_news_types();
       $count = (int) get_theme_mod('news_post_count', 5);
+      
       $q = new WP_Query([
-        'post_type'      => $type,
+        'post_type'      => $types,
         'posts_per_page' => $count,
         'post_status'    => 'publish',
         'orderby'        => 'date',
@@ -29,7 +93,7 @@
       ?>
       <ul>
         <?php while ($q->have_posts()) : $q->the_post(); ?>
-        <li><span class="date"><?php echo get_the_date('Y.m.d'); ?></span><span class="title"><?php the_title(); ?></span></li>
+        <li><span class="date"><?php echo get_the_date('Y.m.d'); ?></span><span class="title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></span></li>
         <?php endwhile; wp_reset_postdata(); ?>
       </ul>
       <?php else : ?>
@@ -64,7 +128,13 @@
     <h2>お客様の思いに応えるサービスを</h2>
     <div class="f-wrap-AC">
       <div class="f-item1-2 flex fadeInLeft animated">
-        <p><img src="<?php echo get_template_directory_uri(); ?>/assets/img/top/1.jpg" alt=""></p>
+        <p>
+          <picture>
+            <source srcset="<?php echo get_template_directory_uri(); ?>/assets/img/top/1.avif" type="image/avif">
+            <source srcset="<?php echo get_template_directory_uri(); ?>/assets/img/top/1.webp" type="image/webp">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/top/1.jpg" alt="お客様の思いに応えるサービス" width="1000" height="625" loading="lazy" decoding="async">
+          </picture>
+        </p>
       </div>
       <div class="f-item1-2 flex fadeInRight animated">
         <ul class="liBox li1Div liCheck mgb1em">
@@ -84,7 +154,13 @@
     <h2>代表挨拶</h2>
     <div class="f-wrap-AC f-row-reverse">
       <div class="f-item1-2 flex fadeInRight animated">
-        <p><img src="<?php echo get_template_directory_uri(); ?>/assets/img/top/2.jpg" alt=""></p>
+        <p>
+          <picture>
+            <source srcset="<?php echo get_template_directory_uri(); ?>/assets/img/top/2.avif" type="image/avif">
+            <source srcset="<?php echo get_template_directory_uri(); ?>/assets/img/top/2.webp" type="image/webp">
+            <img src="<?php echo get_template_directory_uri(); ?>/assets/img/top/2.jpg" alt="代表取締役 杉本 忍" width="1000" height="625" loading="lazy" decoding="async">
+          </picture>
+        </p>
       </div>
       <div class="f-item2-3 waterMleft flex fadeInLeft animated">
         <p class="mb10">当社は「お客様第一主義」を掲げ、地域の皆さまの暮らしとビジネスを技術で支えてまいりました。<br>家電修理とITサービスという異なる領域を一つの会社で提供できるのが私たちの強みです。<br>自衛隊出身という経験を活かし、責任感と誠実さをもって、今後も皆様の笑顔に貢献してまいります。</p>

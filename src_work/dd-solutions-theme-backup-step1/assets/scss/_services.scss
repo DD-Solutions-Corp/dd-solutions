@@ -1,0 +1,100 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+@import 'variables';
+@import 'mixins';
+
+// サービスページ固有のスタイル
+.services-section {
+  .txtIconM {
+    font-size: $font-size-h3;
+    color: $primary-color;
+    margin-bottom: $spacing-md;
+  }
+  
+  .liDef {
+    list-style: none;
+    padding-left: 0;
+    
+    li {
+      margin-bottom: $spacing-sm;
+      padding-left: $spacing-lg;
+      position: relative;
+      
+      &::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: $primary-color;
+        font-weight: bold;
+        font-size: $font-size-large;
+      }
+    }
+  }
+  
+  .plus1div {
+    margin-left: $spacing-lg;
+  }
+  
+  .mb10 {
+    margin-bottom: $spacing-lg;
+  }
+  
+  .boxFrame {
+    border: 2px solid $border-color;
+    padding: $spacing-lg;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    text-align: center;
+  }
+}
+
+// 開発の流れ
+.development-flow {
+  .st-box {
+    text-align: center;
+    padding: $spacing-lg;
+    background-color: $accent-color;
+    color: $background-color;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    
+    .title {
+      font-size: $font-size-small;
+      margin: 0;
+    }
+    
+    .num {
+      font-size: $font-size-h2;
+      margin: 0;
+      font-weight: bold;
+    }
+  }
+  
+  .catch2 {
+    font-size: $font-size-h3;
+    margin-bottom: $spacing-sm;
+    color: $accent-color;
+  }
+}
+
+
+
+
+
+
+
+
+

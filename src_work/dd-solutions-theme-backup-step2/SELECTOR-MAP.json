@@ -1,0 +1,43 @@
+
+{
+  "header": {
+    "old": "#headWrap",
+    "new": ".site-header"
+  },
+  "logo": {
+    "old": ".logoArea",
+    "new": ".site-logo"
+  },
+  "navigation": {
+    "old": ".NavMenu.pcNavi",
+    "new": ".main-navigation"
+  },
+  "footer": {
+    "old": "footer",
+    "new": ".site-footer"
+  },
+  "main_visual": {
+    "old": "#mainVisualWrap",
+    "new": ".hero-section"
+  },
+  "news_section": {
+    "old": ".bgNews",
+    "new": ".news-section"
+  },
+  "content_sections": {
+    "old": ".bgcolorTopBnr, .bgWhite, .bgColor, .bgTopad1, .bgTopad2",
+    "new": ".content-section"
+  },
+  "page_title": {
+    "old": "#pageTitleMover",
+    "new": ".page-header"
+  },
+  "contact_button": {
+    "old": ".liContact",
+    "new": ".contact-link"
+  },
+  "mobile_menu": {
+    "old": ".Toggle",
+    "new": ".mobile-menu-toggle"
+  }
+}

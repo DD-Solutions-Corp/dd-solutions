@@ -1,0 +1,123 @@
+
+
+
+
+
+
+@import 'variables';
+@import 'mixins';
+
+// お問い合わせページ固有のスタイル
+.contact-form {
+  max-width: 800px;
+  margin: 0 auto;
+  
+  .h2Center {
+    text-align: center;
+    margin-bottom: $spacing-xl;
+    
+    span {
+      display: block;
+      font-size: $font-size-small;
+      color: $text-light;
+      margin-top: $spacing-sm;
+    }
+  }
+  
+  .contPad {
+    padding: $spacing-lg;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    
+    p {
+      margin-bottom: $spacing-md;
+    }
+    
+    .txtInd,
+    .txtInd2 {
+      font-size: $font-size-small;
+      color: $text-light;
+      margin-bottom: $spacing-md;
+    }
+    
+    .fcRedOrange {
+      color: $secondary-color;
+      font-weight: bold;
+    }
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: $spacing-lg;
+    
+    th,
+    td {
+      padding: $spacing-md;
+      vertical-align: top;
+      
+      @include media-breakpoint-down(md) {
+        display: block;
+        width: 100%;
+      }
+    }
+    
+    th {
+      width: 30%;
+      font-weight: bold;
+      background-color: #f8f9fa;
+      
+      @include media-breakpoint-down(md) {
+        width: 100%;
+        padding-bottom: $spacing-xs;
+      }
+    }
+    
+    td {
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: $spacing-sm;
+        border: 1px solid $border-color;
+        border-radius: 4px;
+        font-family: $font-family-base;
+      }
+    }
+  }
+  
+  .formm {
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .contactBtnWrap {
+    margin-top: $spacing-lg;
+    
+    .contactBtn {
+      display: inline-block;
+      margin-right: $spacing-md;
+      
+      .txtContacBnr {
+        a {
+          @include button-style($primary-color, $background-color, darken($primary-color, 10%));
+          text-decoration: none;
+          display: inline-block;
+          padding: $spacing-sm $spacing-md;
+        }
+      }
+    }
+  }
+}
+
+// フォームバリデーション
+.form-error {
+  color: #e74c3c;
+  font-size: $font-size-small;
+  margin-top: $spacing-xs;
+}
+
+
+
+
+

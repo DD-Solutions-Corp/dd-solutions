@@ -1,0 +1,29 @@
+
+
+
+
+
+
+
+
+{
+  "version": "1.0.0",
+  "assets": {
+    "css": {
+      "common.css": "common.css",
+      "common.min.css": "common.min.css"
+    },
+    "js": {
+      "main.js": "main.js",
+      "main.min.js": "main.min.js"
+    }
+  },
+  "buildTime": "<?php echo date('Y-m-d H:i:s'); ?>"
+}
+
+
+
+
+
+
+
