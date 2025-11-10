@@ -1,0 +1,22 @@
+/* 管理画面用CSS（最小） */
+.seoone-summary{font-weight:bold;margin-bottom:8px}
+.seoone-readtime{font-style:italic;color:#555}
+
+/* ユーザビリティ向上のためのフォームスタイル */
+.seoone-admin-form input[type="text"],
+.seoone-admin-form input[type="number"],
+.seoone-admin-form select,
+.seoone-admin-form textarea {
+    width: 100%;
+    max-width: 600px;
+    padding: 8px;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+}
+.seoone-admin-form button.button.button-primary {
+    margin-top: 12px;
+}
+.seoone-admin-form p {
+    margin-top: 0;
+    margin-bottom: 4px;
+}
